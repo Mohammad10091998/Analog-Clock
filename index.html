@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <script src="https://kit.fontawesome.com/ffd3f97e4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="/index.js" defer></script>
+
+</head>
+
+<body>
+
+
+
+
+        <div class="analog-clock">
+            <div class="hand hour" id="hour"></div>
+            <div class="hand minute" id="minute"></div>
+            <hand class="hand second" id="second"></hand>
+
+            <div class="number number1"><i class="fa-solid fa-i"></i></div>
+            <div class="number number2"><i class="fa-solid fa-i"></i> <i class="fa-solid fa-i"></i></div>
+            <div class="number number3"><i class="fa-solid fa-i"></i> <i class="fa-solid fa-i"></i> <i
+                    class="fa-solid fa-i"></i></div>
+            <div class="number number4"><i class="fa-solid fa-i"></i> <i class="fa-solid fa-v"></i></div>
+            <div class="number number5"><i class="fa-solid fa-v"></i></div>
+            <div class="number number6"><i class="fa-solid fa-v"></i> <i class="fa-solid fa-i"></i></div>
+            <div class="number number7"><i class="fa-solid fa-v"></i> <i class="fa-solid fa-i"></i> <i
+                    class="fa-solid fa-i"></i></div>
+            <div class="number number8"><i class="fa-solid fa-v"></i> <i class="fa-solid fa-i"></i> <i
+                    class="fa-solid fa-i"></i> <i class="fa-solid fa-i"></i></div>
+            <div class="number number9"><i class="fa-solid fa-i"></i> <i class="fa-solid fa-x"></i></div>
+            <div class="number number10"><i class="fa-solid fa-x"></i></div>
+            <div class="number number11"><i class="fa-solid fa-x"></i> <i class="fa-solid fa-i"></i></div>
+            <div class="number number12"><i class="fa-solid fa-x"></i> <i class="fa-solid fa-i"></i></div>
+
+
+            <div id="date">Date is here</div>
+
+        </div>
+
+   
+
+
+            <div class="alarm-add-clear-btn">
+
+                <div id="add-alarm-btn"><i class="fa-solid fa-plus"></i>
+                    <h2>Add Alarm</h2>
+                </div>
+
+
+
+                <div id="clear-alarm-btn"><i class="fa-solid fa-x"></i>
+                    <h2>Clear Alarm</h2>
+                </div>
+
+
+            </div>
+
+            <div id="alarm-desrciption"></div>
+
+
+            <div id="alarm-form">
+                <form action="">
+
+                    <input type="number" name="hour" placeholder="Enter hours" min="0" max="12" id="hour-input"
+                        required />
+                    <input type="number" name="minute" placeholder="Enter Minutes" min="0" max="60" required
+                        id="minute-input" />
+
+
+
+                    <select name="zone" required id="zone-input">
+                        <option value="" selected disabled>Zone</option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <button type="submit" id="set-alarm">SET</button>
+
+
+                </form>
+
+            </div>
+
+            <div id="alarm-time">
+                <div id="alarm-time-clock">
+                    <p>Heyyy !!! buddy it's time</p>
+                </div>
+
+                <div id="alarm-stop-btn-bell">
+                    <i class="fa-solid fa-bell" id="bell"></i>
+                    <i class="fa-solid fa-circle-pause" id="stop-btn"></i>
+                </div>
+            </div>
+
+
+            <div>
+                <audio id="alarm-song" src="./media/Pasoori.mp3"></audio>
+            </div>
+        
+    
+
+</body>
+
+</html>

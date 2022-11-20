@@ -1,0 +1,307 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color:rgb(137, 123, 123);
+}
+body{
+    background-color:rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.whole-document{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.analog-clock{
+    margin:50px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/*-------ANALOG CLOCK----*/
+.analog-clock .number{
+    --rotation:0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transform:rotate(var(--rotation));
+}
+
+.analog-clock .number1{
+    --rotation:30deg
+}
+.analog-clock .number2{
+    --rotation:60deg
+}
+.analog-clock .number3{
+    --rotation:90deg
+}
+.analog-clock .number4{
+    --rotation:120deg
+}
+.analog-clock .number5{
+    --rotation:150deg
+}
+.analog-clock .number6{
+    --rotation:180deg
+}
+.analog-clock .number7{
+    --rotation:210deg
+}
+.analog-clock .number8{
+    --rotation:240deg
+}
+.analog-clock .number9{
+    --rotation:270deg
+}
+.analog-clock .number10{
+    --rotation:300deg
+}
+.analog-clock .number11{
+    --rotation:330deg
+}
+
+.number i{
+    font-size: 15px;
+    font-weight: bolder;
+    color:var(--text-color);
+    box-shadow: 8px 8px 5px -1px black;
+}
+
+.analog-clock::after{
+    content: '';
+    position: absolute;
+    background-color:var(--text-color);
+    box-shadow: 5px 5px 10px -1px black,
+    -5px 5px 10px -1px black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.analog-clock .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left:50%;
+    background-color:var(--text-color);
+    transform: translateX(-50%);
+    border-top-left-radius: 70%;
+    border-top-right-radius: 70%;
+    box-shadow: 8px 8px 5px -1px black;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+.analog-clock .second{
+    width: 3px;
+    height: 45%;
+    background-color: rgb(201, 45, 45);
+}
+.analog-clock .minute{
+    width: 7px;
+    height: 40%;
+    background-color:var(--text-color);
+}
+.analog-clock .hour{
+    width: 10px;
+    height: 35%;
+    background-color:var(--text-color);
+}
+
+/*----analog clock date----*/
+#date{
+    position: absolute;
+    left: 50%;
+    top:75%;
+    transform: translateX(-50%);
+    color:var(--text-color);
+    font-weight: bolder;
+    box-shadow: 5px 5px 6px -1px black;
+    z-index: 1;
+}
+
+
+/*------add alarm-----*/
+
+.alarm-add-clear-btn{
+    display: flex;
+    margin:40px auto;
+}
+#add-alarm-btn{
+    color:var(--text-color);
+    background: rgb(62, 80, 62); 
+    width: 160px;
+    height: 40px;
+    padding-top: 3px;
+    padding-left: 5px;
+    border-radius: 10px; 
+    transition: all 0.5s ease-in-out;
+    margin:0 20px;
+    cursor: pointer;
+}
+#add-alarm-btn h2{
+    display: inline-block;
+}
+#add-alarm-btn i{
+    font-size: larger;
+    font-weight: bolder;
+    color:rgb(140, 209, 140);
+}
+#add-alarm-btn:hover{
+    background: rgb(27, 93, 27);
+    transform:  scale(1.1);
+}
+
+#clear-alarm-btn{
+    display: none;
+    color:var(--text-color);
+    background: rgb(103, 29, 29); 
+    width: 160px;
+    height: 40px;
+    padding-top: 3px;
+    padding-left: 5px;
+    border-radius: 10px; 
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+#clear-alarm-btn h2{
+    display: inline-block;
+}
+#clear-alarm-btn i{
+    font-size: larger;
+    font-weight: bolder;
+    color:rgb(240, 161, 161);
+}
+#clear-alarm-btn:hover{
+    background: rgb(125, 43, 43);
+    transform:  scale(1.1);
+}
+
+/*--- add alarm form----*/
+#alarm-form{
+    display: none;
+}
+#alarm-form input{
+    height: 30px;
+    width: 100px;
+    margin:10px;
+    background: rgb(72, 68, 68);
+    color:var(--text-color);
+    border: none;
+    border-radius: 5px;
+ }
+
+ #alarm-form select{
+    height: 30px;
+    width: 70px;
+    margin:10px;
+    background: rgb(75, 71, 71);
+    color:var(--text-color);
+    border: none;
+    border-radius: 5px;
+ }
+
+ /*--set alarm button---*/
+ #set-alarm{
+    height: 30px;
+    width: 50px;
+    background: rgb(109, 95, 26);
+    color:rgb(45, 38, 38);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
+}
+#set-alarm:hover{
+    transform: scale(1.1);
+}
+
+/*---Alarm -description-----*/
+#alarm-desrciption{
+    display: none;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    color:var(--text-color);
+}
+
+
+/*------alarm time ----*/
+#alarm-time{
+    display: none;
+    margin-bottom: 50px;
+}
+#alarm-time-clock{
+    color:var(--text-color);
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+#alarm-stop-btn-bell{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#alarm-stop-btn-bell i{
+    color:var(--text-color);
+    font-size: 40px;
+    margin-top:30px
+}
+#stop-btn{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+#stop-btn:hover{
+    transform: scale(1.5);
+}
+#bell{
+    animation: ringing 1s linear infinite normal;
+}
+@keyframes ringing {
+    25%{
+        transform: scale(1.3) rotate(30deg);
+    }
+    50%{
+        transform: scale(1) rotate(0deg);
+    }
+    75%{
+        transform: scale(1.3) rotate(-30deg);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+@media only screen and (max-width:400px){
+    
+    #alarm-form input,select{
+        display: block;
+        width: 150px;
+        height: 40px;
+    }
+    #alarm-form select{
+        width: 150px;
+        height: 40px;
+    }
+    #set-alarm{
+        width: 40px;
+        margin-left:50%;
+        transform: translateX(-50%);
+    }
+}
